@@ -3,507 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medio Ambiente - Composta, Cuidado y Reciclaje</title>
+    <title>Sitio Web - Medio Ambiente</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            display: flex;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* MARCO IZQUIERDO */
-        .sidebar {
-            width: 260px;
-            background: linear-gradient(180deg, #0D3D0D 0%, #1C4C1C 50%, #0A2E0A 100%);
-            padding: 30px 20px;
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            border-right: 4px solid #4CAF50;
-            box-shadow: 4px 0 20px rgba(0,0,0,0.6);
-            z-index: 100;
-        }
-
-        .sidebar h2 {
-            color: #4CAF50;
-            font-size: 1.9rem;
-            margin-bottom: 35px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-            border-bottom: 2px solid #2E7D32;
-            padding-bottom: 15px;
-            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
-        }
-
-        .menu-principal {
-            list-style: none;
-        }
-
-        .menu-principal li {
-            margin-bottom: 18px;
-        }
-
-        .menu-principal button {
-            width: 100%;
-            display: block;
-            color: #E0E0E0;
-            background: rgba(76, 175, 80, 0.05);
-            border: 1px solid transparent;
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-weight: 600;
-            padding: 15px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: left;
-            border-left: 4px solid transparent;
-        }
-
-        .menu-principal button:hover, .menu-principal button.active {
-            background: rgba(76, 175, 80, 0.2);
-            color: #4CAF50;
-            border-left: 4px solid #4CAF50;
-            border-color: #4CAF50;
-            transform: translateX(8px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-        }
-
-        .menu-principal button::before {
-            content: "•";
-            color: #4CAF50;
-            font-size: 1.8rem;
-            margin-right: 12px;
-            font-weight: bold;
-        }
-
-        /* MARCO DERECHO */
-        .contenido {
-            margin-left: 260px;
-            width: calc(100% - 260px);
-            min-height: 100vh;
-            background: linear-gradient(rgba(5, 25, 5, 0.85), rgba(5, 25, 5, 0.9)), 
-                        url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1920') center/cover fixed;
+            margin: 0;
             padding: 0;
-        }
-
-        .pagina {
-            display: none;
-            min-height: 100vh;
-            animation: fadeIn 0.5s;
-        }
-
-        .pagina.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .header-pagina {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 50px 30px;
-            text-align: center;
-            border-bottom: 3px solid #4CAF50;
-        }
-
-        .header-pagina h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: #4CAF50;
-            text-shadow: 0 0 25px rgba(76, 175, 80, 0.8);
-            margin-bottom: 10px;
-        }
-
-        .header-pagina p {
-            font-size: 1.3rem;
-            color: #CCCCCC;
-            font-style: italic;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 30px;
-        }
-
-        .imagen-principal {
-            width: 100%;
-            max-width: 900px;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.8);
-            border: 3px solid #4CAF50;
-            margin: 0 auto 40px;
-            display: block;
-        }
-
-        .seccion-info {
-            background: rgba(26, 26, 26, 0.9);
-            padding: 40px;
-            border-radius: 15px;
-            margin: 30px 0;
-            border-left: 6px solid #4CAF50;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .seccion-info h2 {
-            color: #8BC34A;
-            font-size: 2.3rem;
-            margin-bottom: 20px;
-        }
-
-        .seccion-info h3 {
-            color: #4CAF50;
-            font-size: 1.6rem;
-            margin: 25px 0 15px 0;
-        }
-
-        .seccion-info p {
-            line-height: 1.9;
-            margin-bottom: 15px;
-            color: #E0E0E0;
-            font-size: 1.15rem;
-        }
-
-        .grid-imagenes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 35px 0;
-        }
-
-        .card-info {
-            background: rgba(46, 125, 50, 0.2);
-            border-radius: 12px;
+            display: flex;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            height: 100vh;
             overflow: hidden;
-            border: 2px solid #4CAF50;
-            transition: transform 0.3s;
         }
 
-        .card-info:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(76, 175, 80, 0.4);
+        /* Marco Izquierdo (Menú de Navegación) */
+        .marco-izquierdo {
+            width: 20%;
+            height: 100vh;
+            background-color: #2E7D32; /* Fondo verde oscuro */
+            color: white;
+            padding: 30px 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            z-index: 10;
         }
-
-        .card-info img {
+        .marco-izquierdo h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+        .marco-izquierdo ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .marco-izquierdo li {
+            margin-bottom: 15px;
+        }
+        .marco-izquierdo button {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
+            background: none;
+            border: 2px solid transparent;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .marco-izquierdo button:hover {
+            background-color: #4CAF50;
+            border-color: white;
         }
 
-        .card-content {
-            padding: 25px;
+        /* Contenedor del Centro (Carga las páginas principales) */
+        .contenido-central {
+            width: 65%;
+            height: 100vh;
+            border: none;
         }
 
-        .card-content h4 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: #8BC34A;
-        }
-
-        .lista-tips {
-            margin: 20px 0;
-        }
-
-        .lista-tips li {
-            margin: 15px 0;
-            padding-left: 35px;
-            position: relative;
-            line-height: 1.7;
-            font-size: 1.1rem;
-            color: #E0E0E0;
-        }
-
-        .lista-tips li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #4CAF50;
+        /* Marco Derecho (Banner estático) */
+        .marco-derecho {
+            width: 15%;
+            height: 100vh;
+            background-color: #4CAF50; /* Fondo verde claro */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
             font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar { 
-                width: 100%; 
-                height: auto; 
-                position: relative; 
-                border-right: none;
-                border-bottom: 4px solid #4CAF50;
-            }
-            .contenido { 
-                margin-left: 0; 
-                width: 100%; 
-            }
-            .header-pagina h1 { font-size: 2.5rem; }
-            .imagen-principal { height: 300px; }
+            text-align: center;
+            writing-mode: vertical-rl; /* Texto vertical elegante */
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
-    <!-- MARCO IZQUIERDO -->
-    <div class="sidebar">
-        <h2>Menú</h2>
-        <ul class="menu-principal">
-            <li><button onclick="mostrar('principal')" class="active">Principal</button></li>
-            <li><button onclick="mostrar('composta')">Composta</button></li>
-            <li><button onclick="mostrar('cuidado')">Cuidado</button></li>
-            <li><button onclick="mostrar('reciclaje')">Reciclaje</button></li>
+
+    <div class="marco-izquierdo">
+        <h2>PRINCIPAL</h2>
+        <ul>
+            <li><button onclick="cargarPagina('cuidado.html')">🌍 Cuidado</button></li>
+            <li><button onclick="cargarPagina('composta.html')">🌱 Composta</button></li>
+            <li><button onclick="cargarPagina('reciclaje.html')">♻️ Reciclaje</button></li>
         </ul>
     </div>
+    
+    <iframe id="pantalla-principal" class="contenido-central" src="cuidado.html"></iframe>
 
-    <!-- MARCO DERECHO -->
-    <div class="contenido">
-        <!-- PÁGINA PRINCIPAL -->
-        <div id="principal" class="pagina active">
-            <div class="header-pagina">
-                <h1>MEDIO AMBIENTE</h1>
-                <p>Proteger nuestro planeta es tarea de todos</p>
-            </div>
-            <div class="container">
-                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1200&auto=format&fit=crop" 
-                     alt="Planeta Tierra" 
-                     class="imagen-principal">
-
-                <div class="seccion-info">
-                    <h2>¿Qué es el Medio Ambiente?</h2>
-                    <p>El medio ambiente es todo lo que nos rodea: el aire que respiramos, el agua que tomamos, los árboles, animales, el suelo y el clima. Es el sistema natural que hace posible la vida en la Tierra.</p>
-                    <p><strong>Problema actual:</strong> La contaminación, deforestación y cambio climático están dañando nuestro hogar. Cada año tiramos 2,000 millones de toneladas de basura y talamos 15 mil millones de árboles.</p>
-                </div>
-
-                <div class="grid-imagenes">
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=800&auto=format&fit=crop" alt="Contaminación del agua">
-                        <div class="card-content">
-                            <h4>Contaminación</h4>
-                            <p>El 80% de la basura en los océanos es plástico. Una botella tarda 450 años en degradarse.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop" alt="Deforestación">
-                        <div class="card-content">
-                            <h4>Deforestación</h4>
-                            <p>Perdemos un campo de fútbol de bosque cada segundo. Los árboles producen el oxígeno que respiramos.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?q=80&w=800&auto=format&fit=crop" alt="Cambio climático">
-                        <div class="card-content">
-                            <h4>Cambio Climático</h4>
-                            <p>La temperatura global ya subió 1.1°C. Esto causa huracanes más fuertes, sequías e incendios.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="seccion-info">
-                    <h2>¿Cómo puedes ayudar?</h2>
-                    <ul class="lista-tips">
-                        <li>Usa las 3R: Reduce, Reutiliza y Recicla</li>
-                        <li>Haz composta con tus restos de comida</li>
-                        <li>Ahorra agua y energía en casa</li>
-                        <li>Planta árboles y cuida áreas verdes</li>
-                        <li>Usa transporte público, bici o camina</li>
-                        <li>Rechaza plásticos de un solo uso</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA COMPOSTA -->
-        <div id="composta" class="pagina">
-            <div class="header-pagina">
-                <h1>MEDIO AMBIENTE</h1>
-                <p>Composta: Convierte basura en oro para la tierra</p>
-            </div>
-            <div class="container">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=1200&auto=format&fit=crop" 
-                     alt="Composta orgánica" 
-                     class="imagen-principal">
-
-                <div class="seccion-info">
-                    <h2>¿Qué es la Composta?</h2>
-                    <p>La composta es el resultado de descomponer materia orgánica como cáscaras de fruta, restos de verdura y hojas secas. En 2-6 meses obtienes tierra negra llena de nutrientes, sin químicos.</p>
-                    <p><strong>Beneficio ambiental:</strong> El 40% de tu basura es orgánica. Si la compostas, evitas que genere gas metano en los rellenos sanitarios, que es 25 veces más potente que el CO2.</p>
-                </div>
-
-                <div class="grid-imagenes">
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=800&auto=format&fit=crop" alt="Materiales verdes">
-                        <div class="card-content">
-                            <h4>Materiales Verdes</h4>
-                            <p>Cáscaras de fruta, restos de verdura, café, pasto. Aportan nitrógeno.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=800&auto=format&fit=crop" alt="Materiales cafés">
-                        <div class="card-content">
-                            <h4>Materiales Cafés</h4>
-                            <p>Hojas secas, cartón, papel, aserrín. Aportan carbono y evitan mal olor.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=800&auto=format&fit=crop" alt="Composta terminada">
-                        <div class="card-content">
-                            <h4>Composta Lista</h4>
-                            <p>Tierra negra, sin olor, textura de café molido. Perfecta para tus plantas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="seccion-info">
-                    <h3>Cómo hacer composta en 4 pasos:</h3>
-                    <ul class="lista-tips">
-                        <li>Consigue un bote con hoyos o caja de madera</li>
-                        <li>Alterna capas: 2 partes de verdes x 1 de cafés + tierra</li>
-                        <li>Mantén húmedo como esponja exprimida y voltea cada 15 días</li>
-                        <li>En 2-6 meses tendrás abono negro con olor a bosque</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA CUIDADO -->
-        <div id="cuidado" class="pagina">
-            <div class="header-pagina">
-                <h1>MEDIO AMBIENTE</h1>
-                <p>Cuidado: Pequeñas acciones, gran impacto</p>
-            </div>
-            <div class="container">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" 
-                     alt="Plantar un árbol" 
-                     class="imagen-principal">
-
-                <div class="seccion-info">
-                    <h2>Cuidar el Medio Ambiente Día a Día</h2>
-                    <p>No necesitas ser activista para ayudar. Con cambios simples en tu rutina reduces tu huella ecológica y proteges los recursos para las futuras generaciones.</p>
-                </div>
-
-                <div class="grid-imagenes">
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-154260160052-748f08b0f6c6?q=80&w=800&auto=format&fit=crop" alt="Ahorrar agua">
-                        <div class="card-content">
-                            <h4>Cuida el Agua</h4>
-                            <p>Cierra la llave al cepillarte. Repara fugas. Una llave goteando tira 30 litros al día.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" alt="Ahorrar energía">
-                        <div class="card-content">
-                            <h4>Cuida la Energía</h4>
-                            <p>Desconecta aparatos. Usa focos LED. Aprovecha la luz natural. Bajas tu recibo y el CO2.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop" alt="Cuidar áreas verdes">
-                        <div class="card-content">
-                            <h4>Cuida las Áreas Verdes</h4>
-                            <p>Un árbol absorbe 22 kg de CO2 al año. No tires basura en parques ni maltrates plantas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="seccion-info">
-                    <h3>5 Hábitos para empezar hoy:</h3>
-                    <ul class="lista-tips">
-                        <li>Lleva tu termo y bolsa de tela siempre</li>
-                        <li>Báñate en 5 minutos: ahorras 80 litros</li>
-                        <li>Camina o usa bici para distancias cortas</li>
-                        <li>Compra local y de temporada para reducir transporte</li>
-                        <li>Apaga luces y aparatos que no uses</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- PÁGINA RECICLAJE -->
-        <div id="reciclaje" class="pagina">
-            <div class="header-pagina">
-                <h1>MEDIO AMBIENTE</h1>
-                <p>Reciclaje: Dar nueva vida a los materiales</p>
-            </div>
-            <div class="container">
-                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1200&auto=format&fit=crop" 
-                     alt="Contenedores de reciclaje" 
-                     class="imagen-principal">
-
-                <div class="seccion-info">
-                    <h2>¿Por qué Reciclar?</h2>
-                    <p>Reciclar transforma materiales usados en productos nuevos. Así evitamos extraer más recursos de la naturaleza y reducimos la basura en rellenos sanitarios.</p>
-                    <p><strong>Dato impactante:</strong> Reciclar 1 tonelada de papel salva 17 árboles. Reciclar aluminio usa 95% menos energía que producirlo nuevo.</p>
-                </div>
-
-                <div class="grid-imagenes">
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?q=80&w=800&auto=format&fit=crop" alt="Papel y cartón">
-                        <div class="card-content">
-                            <h4>🔵 Azul: Papel/Cartón</h4>
-                            <p>Hojas, cuadernos, cajas. Debe estar limpio y seco. NO papel con grasa o sanitario.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1586942593821-8a13e8b3e2f7?q=80&w=800&auto=format&fit=crop" alt="Plástico y metal">
-                        <div class="card-content">
-                            <h4>🟡 Amarillo: Plástico/Metal</h4>
-                            <p>Botellas PET, latas, envases. Enjuaga y aplasta. NO envases con comida.</p>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=800&auto=format&fit=crop" alt="Vidrio">
-                        <div class="card-content">
-                            <h4>🟢 Verde: Vidrio</h4>
-                            <p>Botellas y frascos. Quita tapas. NO focos, espejos ni ventanas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="seccion-info">
-                    <h3>Regla de Oro del Reciclaje:</h3>
-                    <ul class="lista-tips">
-                        <li><strong>Limpio:</strong> Enjuaga envases. La comida contamina todo el lote</li>
-                        <li><strong>Seco:</strong> El papel mojado ya no sirve</li>
-                        <li><strong>Aplastado:</strong> Ahorras espacio en el camión recolector</li>
-                        <li><strong>Separado:</strong> Cada material en su contenedor correcto</li>
-                    </ul>
-                    <p style="margin-top: 20px;"><strong>Recuerda:</strong> Reduce y Reutiliza primero. Reciclar es el último paso.</p>
-                </div>
-            </div>
-        </div>
+    <div class="marco-derecho">
+        MEDIO AMBIENTE
     </div>
 
     <script>
-        function mostrar(id) {
-            // Ocultar todas las páginas
-            document.querySelectorAll('.pagina').forEach(pagina => {
-                pagina.classList.remove('active');
-            });
-            
-            // Quitar active de todos los botones
-            document.querySelectorAll('.menu-principal button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Mostrar la página seleccionada
-            document.getElementById(id).classList.add('active');
-            
-            // Marcar botón activo
-            event.target.classList.add('active');
+        function cargarPagina(url) {
+            document.getElementById('pantalla-principal').src = url;
         }
     </script>
+
 </body>
 </html>
